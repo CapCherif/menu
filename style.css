@@ -2,12 +2,30 @@
 
 .menu{
     display: inline-block;
-    width: 300px;
+    width: 120px;
     border-radius: 10px ;
     border: 1px solid lightgray;
     padding: 10px;
     margin: 10px;
 }
 .menu img{
-    width: 300px;
+    width: 120px;
+}
+.menu img:hover{
+    border: 2px solid lightblue;
+    cursor: pointer;
+}
+#app{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+#menu{
+    /* background-color: aquamarine; */
+}
+#resultat {
+    background-color: bisque;
+    width: 500px;
+    padding: 10px;
 }
