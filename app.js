@@ -106,33 +106,41 @@ function ChangeColor(){
 
 
 function AddChoice(index){
-    var obj = menu[index]
+    // faire une copie de profone de l'objet
+    var obj = JSON.parse(JSON.stringify(menu[index]));
     var exist = false
 
+    // voir si l'objet existe, si oui j'incrémente la qt
     choix.forEach((c)=>{
-        if(obj.nom == c.nom){
-            exist = true
+        if(obj.nom == c.nom){         
+            exist = true 
+            c.qt = c.qt + 1
         }
     })
 
-    if(exist == true){
-        obj["qt"] = obj["qt"] + 1
-    }
-    else{
+    // si l'objet n'existe, je créer une qt = 1, et je l'ajoute dans
+    // mes choix
+
+    if(exist == false){   
         obj["qt"] = 1
         choix.unshift(obj)
     }
-    
-    
+        
     console.log(choix)
+    console.log(menu)
 }
 
-// var myObj = {
-//     nom:"Glace",
-//     img:"img",
-//     prix:345
-// }
 
-// myObj['qt'] = 1
+var myObj = {
+    nom:"Glace",
+    img:"img",
+    prix:345
+}
+
+console.log(myObj)
+var txt = JSON.stringify(myObj)
+console.log(txt)
+console.log(JSON.parse(txt))
+// myObj.qt = 1
 
 // console.log(myObj)
