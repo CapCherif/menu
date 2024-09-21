@@ -1,0 +1,13 @@
+
+
+.menu{
+    display: inline-block;
+    width: 300px;
+    border-radius: 10px ;
+    border: 1px solid lightgray;
+    padding: 10px;
+    margin: 10px;
+}
+.menu img{
+    width: 300px;
+}

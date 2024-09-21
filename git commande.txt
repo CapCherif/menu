@@ -1,0 +1,4 @@
+
+
+- git init (initialiser git dans un projet)
+- 
