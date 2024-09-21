@@ -56,7 +56,7 @@ function CreateMenu(category){
         
     })
 
-    var resultat = document.querySelector('#resultat')
+    var resultat = document.querySelector('#menu-detail')
     resultat.innerHTML = html
 }
 
