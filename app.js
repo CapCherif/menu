@@ -85,12 +85,6 @@ function CreateMenu(category){
 CreateMenu("pizza")
 
 
-// var button = document.querySelector('button')
-
-// button.addEventListener("click", function(){
-//     var category = document.querySelector('select').value
-//     CreateMenu(category)
-// })
 
 var select = document.querySelector('select')
 
@@ -100,13 +94,9 @@ select.addEventListener("change", function(){
 })
 
 
-function ChangeColor(){
-    document.querySelector('h2').style.color="red"
-}
-
 
 function AddChoice(index){
-    // faire une copie de profone de l'objet
+    // faire une copie de profonde de l'objet
     var obj = JSON.parse(JSON.stringify(menu[index]));
     var exist = false
 
@@ -127,8 +117,36 @@ function AddChoice(index){
     }
         
     console.log(choix)
-    console.log(menu)
+    CreateChoice()
 }
+
+
+// une fonction pour créer template des choix
+
+function CreateChoice(){
+    var html = ""
+    choix.forEach((m, index)=>{
+        
+        html += `
+            <div class="choix">
+                
+                <img src="${m.img}" alt="">
+                <p>${m.nom}</p>
+                <p>${m.prix} DA</p>
+                <p>${m.qt}</p>            
+                <button onclick="DeleteChoice(${index})">X</button>
+                
+            </div>
+            `
+        
+        
+    })
+
+    var resultat = document.querySelector('#resultat')
+    resultat.innerHTML = html
+}
+
+
 
 
 var myObj = {
@@ -144,3 +162,29 @@ console.log(JSON.parse(txt))
 // myObj.qt = 1
 
 // console.log(myObj)
+
+
+
+// Fonction asynchrone pour tester une API gratuite avec fetch
+// async function fetchData() {
+//     try {
+//         // Appel à l'API publique JSONPlaceholder
+//         let response = await fetch('https://jsonplaceholder.typicode.com/users');
+        
+        
+//         // Conversion de la réponse en format JSON
+//         let data = await response.json();
+        
+//         // Affiche les données reçues
+//         console.log('Données des utilisateurs:', data);
+        
+//     } catch (error) {
+//         // En cas d'erreur, affiche un message d'erreur
+//         console.error('Une erreur est survenue :', error);
+//     }
+// }
+
+// // Appelle la fonction fetchData
+// fetchData().then(()=>{
+//     console.log('working with data')
+// });

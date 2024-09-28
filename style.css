@@ -25,7 +25,19 @@
     /* background-color: aquamarine; */
 }
 #resultat {
-    background-color: bisque;
     width: 500px;
     padding: 10px;
+}
+
+.choix{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin: 10px 0px;
+}
+.choix img{
+    width: 80px;
 }
