@@ -135,17 +135,32 @@ function CreateChoice(){
                 <p>${m.prix} DA</p>
                 <p>${m.qt}</p>            
                 <button onclick="DeleteChoice(${index})">X</button>
-                
+                <button onclick="AddItem(${index})">+</button>
+                <button onclick="SubItem(${index})">-</button>
             </div>
-            `
-        
+        `     
         
     })
-
     var resultat = document.querySelector('#resultat')
     resultat.innerHTML = html
 }
 
+function DeleteChoice(index){
+    choix.splice(index, 1)
+    CreateChoice()
+}
+
+function AddItem(index){
+    choix[index].qt += 1
+    CreateChoice()
+}
+function SubItem(index){
+    if(choix[index].qt > 1){
+        choix[index].qt -= 1
+        CreateChoice()
+    }
+    
+}
 
 
 
