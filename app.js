@@ -118,6 +118,7 @@ function AddChoice(index){
         
     console.log(choix)
     CreateChoice()
+    
 }
 
 
@@ -143,6 +144,7 @@ function CreateChoice(){
     })
     var resultat = document.querySelector('#resultat')
     resultat.innerHTML = html
+    Total()
 }
 
 function DeleteChoice(index){
@@ -162,6 +164,14 @@ function SubItem(index){
     
 }
 
+
+function Total(){
+    var somme = 0
+    choix.forEach((c)=>{
+        somme += c.qt*c.prix
+    })
+    document.querySelector('#total').textContent = somme + "DA"
+}
 
 
 var myObj = {
